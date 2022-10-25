@@ -1,0 +1,59 @@
+<div class="col-md-12">
+  <div class="card card-container ">
+    <form
+      name="form"
+      (ngSubmit)="onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="username">Title</label>
+        <input
+          type="text" class="form-control"
+          name="title"
+          [(ngModel)]="bookmark.title"
+          #title="ngModel"
+          required
+        />
+        <div class="alert-danger" *ngIf="title.errors && f.submitted">
+          <div *ngIf="title.errors['required']">Title is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Tags</label>
+        <input
+          type="text" class="form-control"
+          name="tags"
+          [(ngModel)]="bookmark.tags"
+          #title="ngModel"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>Quote</label>
+        <div class = "bookmark-quote" [innerHTML]="bookmark.content | sanitizeHtml"> </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Thoughts</label>
+        <input
+          type="text"
+          class="form-control"
+          name="thoughts"
+          [(ngModel)]="bookmark.thoughts"
+          #thoughts="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">Bookmark Edit</button>
+      </div>
+
+      <div class="alert alert-warning" *ngIf="f.submitted && isEditFailed">
+        Edit failed!<br />{{ errorMessage }}
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Your modifications has been successfully saved!
+    </div>
+  </div>
+</div>

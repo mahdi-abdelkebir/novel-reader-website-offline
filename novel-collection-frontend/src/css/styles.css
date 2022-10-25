@@ -1,0 +1,66 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  padding-top: 50px;
+  padding-bottom: 10px;
+  color: #405065;
+}
+
+.search-novel-image {
+  width: auto;
+  height: 24px;
+  position: relative;
+}
+
+.image-tooltip-class {
+  opacity: 1 !important;
+  pointer-events: none;
+}
+
+.image-tooltip-class .tooltip-inner {
+  background-color: transparent;
+}
+
+.image-tooltip-class .arrow::before {
+  display: none;
+}
+
+
+.search-button {
+  cursor: pointer;
+  height: 38px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #1c8adb;
+  border-radius: 100px;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-button:hover {
+  background: #5F9BE0;
+}
+
+.search-button:active {
+  background: #17548e;
+}
+
+.search-button:disabled {
+  cursor: default;
+  background: none;
+  border: 1px solid #cccccc;
+  color: #cccccc;
+}
+
+.dropdown-btn {
+  padding: 6px 35px 6px 12px;
+}

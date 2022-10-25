@@ -1,0 +1,79 @@
+<div class="container">
+  <h1 class="h1 text-center">Search for a novel</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-novel">
+      <div class="search-novel-input">
+        <input [formControl]="searchText" class="novel-search-form form-control" type="text" name="search" autocomplete="off"
+               placeholder="Type a title here...">
+      </div>
+      <div class="search-novel-button">
+        <button type="submit" class="search-button s-btn" (click)="searchForNovels()" [disabled]="!searchText.valid && selectedGenres.length == 0 && selectedStatus.value == ''">Search
+        </button>
+        <button type="submit" class="search-button s-btn" (click)="downloadNovel()" [disabled]="!searchText.valid" *ngIf="adminRights == true">Download</button>
+      </div>
+      
+      <div class="search-novel-list">
+        <ng-multiselect-dropdown 
+          [placeholder]="'Genres'"
+          [settings]="dropdownSettings"
+          [data]="$genreOptions"
+          [(ngModel)]="selectedGenres">
+        </ng-multiselect-dropdown>
+      </div>
+
+      <div class="search-novel-list caret-status">
+        <select [formControl]="selectedStatus" class = "dropdown-btn">
+          <option value="" disabled selected hidden>Status</option>
+          <option *ngFor="let option of $statusOptions" value="{{option}}">{{option}}</option>
+          <span style="float: right !important; padding-right: 4px;" >
+            <span class = "caret-novel"></span>
+          </span>
+        </select>
+      </div>
+    </div>
+    <div class = "search-container">
+      <div *ngFor="let novel of novels" class = "search-item">
+        <div>
+          <img class="search-novel-image-big" src="{{novel.thumbnailURL}}" alt="">
+        </div>
+        <div class = "search-item-content">
+          <div class = "search-item-title">
+            <h1>{{novel.title}}</h1>
+            <i>Author: </i><span>{{novel.author}}</span><br/>
+            <i>Genres: </i>
+              <ng-container *ngFor="let g of novel.genres; index as indexOfelement">
+                <a href="#" class = "genre-tag">{{g.genre}}</a>
+                <span *ngIf="indexOfelement!=novel.genres.length-1">, </span>
+              </ng-container>
+            <br/>
+            <i>Type: </i><span>{{novel.type}}</span><br/>
+            <i>Status: </i><span>{{novel.status}}</span><br/>
+          </div>
+          <br/>
+          <div class = "search-item-summary">
+          <h4 class = "seriesinfo">Description</h4>
+          <div class = "summary__content" [ngClass]="{'active': novel.readmore}" [innerHTML]="novel.description | sanitizeHtml"></div>
+          <a href="javascript:;" class = "search-item-readmore" (click)="novel.readmore = !novel.readmore">{{ !novel.readmore ? 'Read More': 'Read Less' }}</a>
+        </div>
+          <div class = "search-item-footer">
+            <i>Latest release: {{novel.lastReleasedChapter}} ({{novel.lastReleasedDate}})</i>
+            <div>
+              <i class = "search-item-rating">Rating: {{novel.rating}}</i>
+              
+              <ng-container *ngIf="novel.added !== true">
+                <button class="search-button novel-add-collection-button" (click)="addGame(novel)">Add to collection</button>
+              </ng-container>
+
+              <ng-container *ngIf="novel.added == true">
+                <button class="search-button novel-add-collection-button" disabled>Already added before</button>
+              </ng-container>
+
+            <div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>

@@ -1,0 +1,40 @@
+.toolbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #5985a6;
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.toolbar-vertical-line {
+  content: "";
+  width: .5px;
+  height: 100%;
+  background-color: #405065;
+}
+
+.app-title {
+  padding-right: 32px;
+}
+
+.toolbar-link {
+  color: white;
+  padding: 0 16px 0 16px;
+  text-decoration: none;
+}
+
+.toolbar-link:hover {
+
+}
+
+
+.flex-right {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto 
+}

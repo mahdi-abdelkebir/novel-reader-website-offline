@@ -1,0 +1,124 @@
+
+p {
+  margin-bottom: 20px;
+  margin-top: 0px;
+  font-family: Arial, serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 40.7143px;
+}
+
+.footer {
+  padding-bottom: 100px
+}
+
+.nav_buttons a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #17548E !important;
+    color: #17548E !important;
+}
+
+.nav_buttons a:hover {
+  color: white !important;
+  background-color: #17548E !important;
+}
+
+.next-btn {
+  float: right;
+}
+
+.prev-btn {
+  float: left;
+}
+
+
+
+.w3-border-right {
+  border-right: 1px solid #ccc!important;
+}
+
+.w3-sidebar {
+  margin-top: -60px;
+  border-right-width: 0px!important;  
+  height: 100%;
+  width: 350px;
+  background-color: #fff;
+  position: fixed!important;
+  z-index: 1;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: scroll; /* Add vertical scrollbar */
+}
+
+.w3-sidebar button {
+  background-color:rgb(135, 199, 255);
+}
+
+.w3-sidebar .download-button {
+  background-color:rgb(73, 168, 250);
+}
+
+.w3-bar-block .w3-bar-item {
+  width: 100%;
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  white-space: normal;
+  float: none;
+  outline: 0;
+}
+
+.w3-button.active {
+  background-color: #d5d5d5;
+}
+
+.w3-button {
+  cursor:pointer;
+}
+.w3-large {
+  font-size: 18px!important;
+}
+
+.bookmark-button {
+  padding-left: 0;
+  top: 35%;
+  border-color:rgba(255, 255, 255, 0.3) !important;
+  background-color:rgb(210, 161, 187);
+}
+
+.bookmark-button:hover {
+  background-color:rgb(176, 113, 147);  
+}
+
+.left-button {
+  position: fixed;
+  -webkit-border-radius: 0 36px 36px 0;
+  border-radius: 0 36px 36px 0;
+  height: 72px;
+  width: 36px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.slider-button {
+  top: 55%;
+  border-color:rgba(255, 255, 255, 0.3) !important;
+  background-color:rgb(255 208 192);
+}
+
+
+.slider-button:hover {
+  background-color:rgb(224, 171, 154);  
+}
+
+.slider-button-icon {
+    right: 2px;
+    bottom: 0;
+    display: block;
+    fill: #000;
+    height: 40px;
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+}

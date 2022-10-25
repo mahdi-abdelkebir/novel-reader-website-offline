@@ -1,0 +1,134 @@
+
+.search-novel {
+  display: inline-flex;
+  flex-direction: row;
+  padding-bottom: 50px;
+  margin:auto;
+}
+
+.novel-search-form {
+  box-shadow: 0 10px 40px 0 #B0C1D9;
+  width: 400px;
+}
+
+.search-novel-input {
+  order: 1;
+  padding: 0 24px 0 0;
+  vertical-align: baseline;
+}
+
+.search-novel-button {
+  order: 2;
+  padding: 0 24px 0 8px;
+  vertical-align: baseline;
+}
+
+.search-novel-button > .s-btn {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 0 10px;
+}
+
+.search-novel-list {
+  order: 3;
+  padding: 0 8px 0 8px;
+}
+
+.search-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-select {
+  cursor: pointer;
+  height: 38px;
+  width: 200px;
+  border: 2px solid #17548e;
+  color: #17548e;
+  appearance: none;
+  padding-left: 8px;
+  background: url(/assets/images/dropdown.png) no-repeat 90%;
+}
+
+.search-item {
+  background-color: white;
+  border: 1px #b9b9b9 solid;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row
+}
+
+.search-novel-image-big {
+  width: 200px;
+  height: auto;
+  border: 2px solid #17548e;
+  margin-right:20px
+}
+
+.search-item-content {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-item-summary {
+  margin-top: 10px;
+}
+
+.search-item-summary > .summary {
+  display: inline;
+}
+
+.search-item-footer {
+  padding-top: 20px;
+  margin-top: auto;
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+
+.search-item-rating {
+  margin-right:10px
+}
+
+.novel-add-collection-button {
+  font-size: 15px;
+  height: 30px !important;
+  border-radius: 5px !important;
+}
+
+
+.limitTextHeight {
+  max-height: 20px;
+  overflow: hidden;
+}
+
+.summary__content {
+  -moz-transition: max-height .5s;
+  -ms-transition: max-height .5s;
+  -o-transition: max-height .5s;
+  -webkit-transition: max-height .5s;
+  transition: max-height .5s;
+  max-height: 119px;
+  display: block;
+  overflow: hidden;
+  word-break: break-word;
+  word-wrap: break-word;
+  line-height: 30px;
+  position: relative;
+}
+
+.search-item-readmore {
+  margin-left: 5px;
+}
+
+.summary__content.active {
+  max-height: 600px;
+}
+
+.seriesinfo {
+  font-size:15px
+}

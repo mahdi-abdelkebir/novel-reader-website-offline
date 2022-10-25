@@ -1,0 +1,35 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+     alt="Icon"
+    src="assets/images/logo.png"
+  />
+  <span class="app-title">WebNovel Readers Hub</span>
+  <div class="toolbar-vertical-line"></div>
+
+  <a class="toolbar-link" href="/novel-search">Search novel</a>
+  <div class="toolbar-vertical-line"></div>
+  
+  <ng-container *ngIf="isLoggedIn">
+    <a class="toolbar-link"  href="/novels-collection">Your collection</a>
+    <div class="toolbar-vertical-line"></div>
+  </ng-container>
+
+  <ng-container *ngIf="isLoggedIn">
+    <a class="toolbar-link"  href="/bookmark-list">Your bookmarks</a>
+    <div class="toolbar-vertical-line"></div>
+  </ng-container>
+
+
+  <div class="flex-right" *ngIf="!isLoggedIn">
+      <a href="/register" class="toolbar-link" routerLink="register">Sign Up</a>
+      <a href="/login" class="toolbar-link" routerLink="login">Login</a>
+  </div>
+
+  <div class="flex-right" *ngIf="isLoggedIn">
+      <a href="/profile" class="toolbar-link" routerLink="profile">{{ username }}</a>
+      <a href class="toolbar-link" (click)="logout()">LogOut</a>
+  </div>
+</div>
+<router-outlet></router-outlet>

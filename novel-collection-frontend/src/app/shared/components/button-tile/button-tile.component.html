@@ -1,0 +1,27 @@
+<div class="button-tile">
+  <div class="tile-group">
+    <span class="tile-title">{{novel.title}}</span>
+    <div class="tile-image-container">
+      <img src="{{novel.thumbnailURL}}" class="tile-image" alt="">
+    </div>
+
+    <div><select [formControl]="selectedStatus" class = "reading-select reading-status" (change)="onStatus($event.target.value)">
+      <option value="" disabled hidden>Status</option>
+      <option *ngFor="let option of status" value="{{option}}">{{option}}</option>
+      <option *ngIf="novel.status == 'Completed'" value="Finished">Finished</option>
+    </select></div>
+    
+    <ng-container *ngIf = "isReading()">
+      <div>
+        <select [formControl]="selectedChapter" class = "reading-select reading-chapter" (change)="onChapter($event.target.value)">
+          <option value="" disabled selected hidden>Chapter</option>
+          <option *ngFor="let item of [].constructor(novel.lastReleasedChapter-1); let i = index" value="{{ i + 1 }}">{{ i + 1 }} </option>
+          <option *ngIf="novel.status == 'Completed'" value="{{ novel.lastReleasedChapter }}">{{ novel.lastReleasedChapter }} (END)</option>
+        </select>
+        <a class="chapter-button" [routerLink]="['/novel/'+ novel.slug+ '/'+reading.chapter]">Read</a>
+      </div>
+    </ng-container>
+
+    <a class="tile-button" (click)="deleteClick(reading)">Remove</a>
+  </div>
+</div>

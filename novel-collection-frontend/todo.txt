@@ -1,0 +1,13 @@
+The Death Mage Who Doesn’t Want a Fourth Time
+
+json-server --watch assets/data.json
+
+- Bookmark Slide content (READ MORE)
+
+- Chapter suggest modification
+    Admin side: Compare old and new (additions glow GREEN, removals glow RED)
+
+- Comments
+
+- Login redirect to collections
+

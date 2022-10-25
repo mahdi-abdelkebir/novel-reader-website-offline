@@ -1,0 +1,11 @@
+
+backup
+
+novel-collection-frontend/node_modules
+novel-collection-frontend/.vscode
+novel-collection-frontend/.angular
+
+novel-collection-backend/node_modules
+novel-collection-backend/.apt_generated
+novel-collection-backend/.settings
+novel-collection-backend/target

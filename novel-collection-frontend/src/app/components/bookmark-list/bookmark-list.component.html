@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 class="h1 text-center">Your list of bookmarks</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-bookmark">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+             placeholder="Search here...">
+      <button type="submit" class="search-button s-btn" (click)="search()">Search </button>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngIf = "collectionLoaded | async">
+        <div *ngFor="let bookmark of bookmarks" class = "bookmark-item">
+            <h3 class = "bookmark-title"> Title: {{ bookmark.title }} </h3>
+            <div class = "button-container">
+              <a href="javascript:void(0);" (click) = "edit(bookmark)"> Edit </a>
+              <a href="javascript:void(0);" (click) = "delete(bookmark)"> Delete </a>
+            </div>
+            <div class = "_tags" *ngIf = "bookmark.tags">
+              <span>Tags: </span>
+              <ng-container *ngFor="let tag of bookmark.tags.split(' ')">
+                <ng-container *ngIf="searchTags.includes('#' + tag.toLowerCase())">
+                  <span class = 'badge badge-pill badge-warning'>{{ tag }}</span>
+                </ng-container>
+                
+                <ng-container *ngIf="searchTags.length == 0 || !searchTags.includes('#' + tag.toLowerCase())">
+                  <span class = 'badge badge-pill badge-secondary'>{{ tag }}</span>
+                </ng-container>
+              </ng-container>
+            </div>
+            <hr/>
+
+            <div class = "summary__content" [ngClass]="{'active': bookmark.readmore}" [innerHTML]="bookmark.content | sanitizeHtml"></div>
+            <a href="javascript:;" class = "bookmark-item-readmore" (click)="bookmark.readmore = !bookmark.readmore">{{ !bookmark.readmore ? 'Read More': 'Read Less' }}</a>
+
+            <ng-container *ngIf = "bookmark.thoughts != null">
+              <hr/>
+              <p class = "bookmark-thoughts"> Thoughts: {{ bookmark.thoughts }} </p>
+            </ng-container>
+            <hr/>
+            <i> {{ bookmark.chapterTitle }} </i>
+        </div>
+    </ng-container>
+  </div>
+</div>

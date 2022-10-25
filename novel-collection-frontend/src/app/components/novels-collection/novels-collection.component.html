@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="h1 text-center">Your list of novels</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-novel">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+             placeholder="Pick up a novel from your collection">
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngIf = "collectionLoaded | async">
+      <div class="search-novel" *ngFor="let reading of novels | filter: searchText">
+        <button-tile [reading]="reading" [novel]="reading.compositeKey.novel" [status] = "$options" (onDeleted)="deleteReading($event)" (onChanged)="changeReading($event)"></button-tile>
+      </div>
+    </ng-container>
+  </div>
+</div>
