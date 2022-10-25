@@ -2,7 +2,7 @@
 
 A website created using Springboot as backend API, and Angular as frontend.
 
-Angular sends search bar results to springboot, with the option to download if missing. Here download basically means scrapping the novel and its chapter from a real novel website, which in this case www.boxnovel.com.
+Angular sends search bar results to springboot, with the option to download if missing. Here download basically means scrapping the novel and its chapters from a real novel website, which in this case www.boxnovel.com.
 
 Other than that, it saves your progress by login and offers a way to bookmark your favourite quotes with a side note.
 
